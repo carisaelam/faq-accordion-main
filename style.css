@@ -1,0 +1,199 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light--pink: hsl(275, 100%, 97%);
+  --gray--purple: hsl(292, 16%, 49%);
+  --dark--purple: hsl(292, 42%, 14%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  font-family: "Work Sans";
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+.faq__answer {
+  display: none;
+}
+body {
+  background-color: var(--light--pink);
+}
+
+.main__container {
+  max-width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-image: url(assets/images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 1rem;
+}
+
+.card__container {
+  background-color: var(--white);
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.card__header {
+  display: flex;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.card__header img {
+  margin-right: 1rem;
+}
+
+.faq__item {
+  border-bottom: 1px solid hsla(0, 0%, 50%, 0.166);
+}
+
+.faq__item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.faq__question__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+  font-size: 0.7rem;
+}
+
+.faq__question {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.faq__answer {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  display: none;
+  color: var(--gray--purple);
+}
+
+.attribution {
+  font-size: 0.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.attribution a {
+  color: hsl(240, 99%, 37%);
+}
+
+@media (min-width: 43em) {
+  .main__container {
+    min-height: 100vh;
+    background-image: url(assets/images/background-pattern-desktop.svg);
+    display: grid;
+    place-content: center;
+  }
+
+  .card__container {
+    border-radius: 1rem;
+    box-shadow: 0 0 20px 10px rgba(117, 109, 131, 0.253);
+    max-width: 30rem;
+    padding: 0 2rem;
+  }
+
+  .faq__question {
+    font-size: 0.85rem;
+    margin-right: 1rem;
+  }
+
+  .faq__question:hover {
+    cursor: pointer;
+    color: rgb(180, 22, 180);
+  }
+}
